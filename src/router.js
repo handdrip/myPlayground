@@ -3,8 +3,9 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 
 import createSomethingProcess from "./components/CreateSomethingProcess.js";
+import DialogOverlay from "./components/DialogBackground.js";
+import DialogContent from "./components/TestComp.vue";
 Vue.use(Router);
-
 export default new Router({
   routes: [
     {
@@ -25,6 +26,11 @@ export default new Router({
       path: "/something",
       name: "something",
       component: createSomethingProcess("something")
+    },
+    {
+      path: "/dialog",
+      name: "dialog",
+      component: DialogOverlay(DialogContent)
     }
   ]
 });
